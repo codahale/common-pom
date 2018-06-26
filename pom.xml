@@ -16,14 +16,12 @@
     limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.codahale</groupId>
   <artifactId>common-pom</artifactId>
-  <version>0.0.3-SNAPSHOT</version>
+  <version>0.0.3</version>
   <packaging>pom</packaging>
   <name>common-pom</name>
   <url>https://github.com/codahale/common-pom</url>
@@ -50,7 +48,7 @@
     <developerConnection>scm:git:https://github.com/codahale/common-pom.git
     </developerConnection>
     <url>https://github.com/codahale/common-pom</url>
-    <tag>HEAD</tag>
+    <tag>v0.0.3</tag>
   </scm>
 
   <developers>
@@ -182,7 +180,7 @@
               <executable>java</executable>
               <arguments>
                 <argument>-classpath</argument>
-                <classpath/>
+                <classpath />
                 <argument>org.openjdk.jmh.Main</argument>
                 <argument>${bench.args}</argument>
               </arguments>
@@ -380,7 +378,7 @@
             <configuration>
               <fail>false</fail>
               <rules>
-                <requireUpperBoundDeps/>
+                <requireUpperBoundDeps />
               </rules>
             </configuration>
             <goals>
@@ -402,7 +400,7 @@
           <mapping>
             <java>SLASHSTAR_STYLE</java>
           </mapping>
-          <useDefaultExcludes/>
+          <useDefaultExcludes />
           <excludes>
             <exclude>src/main/resources/**</exclude>
           </excludes>
