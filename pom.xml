@@ -414,7 +414,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <version>1.4.1</version>
+        <version>3.0.0-M2</version>
         <executions>
           <execution>
             <id>enforce</id>
@@ -432,6 +432,12 @@
                     <file>LICENSE</file>
                   </files>
                 </requireFilesExist>
+                <!-- Require that the license file be the official Apache License. -->
+                <requireFileChecksum>
+                  <file>LICENSE</file>
+                  <checksum>cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30</checksum>
+                  <type>sha256</type>
+                </requireFileChecksum>
               </rules>
             </configuration>
             <goals>
