@@ -40,6 +40,13 @@
   </licenses>
 
   <inceptionYear>2018</inceptionYear>
+  <scm>
+    <connection>scm:git:https://github.com/codahale/common-pom.git</connection>
+    <developerConnection>scm:git:https://github.com/codahale/common-pom.git
+    </developerConnection>
+    <url>https://github.com/codahale/common-pom</url>
+    <tag>HEAD</tag>
+  </scm>
 
   <developers>
     <developer>
