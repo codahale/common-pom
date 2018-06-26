@@ -23,6 +23,11 @@
   <artifactId>common-pom</artifactId>
   <version>0.0.2-SNAPSHOT</version>
   <packaging>pom</packaging>
+  <name>common-pom</name>
+  <url>https://github.com/codahale/common-pom</url>
+  <description>
+    A common POM for Java software written by Coda Hale.
+  </description>
 
   <!--
       Everything's released under the Apache License, since it was written by real lawyers and is
