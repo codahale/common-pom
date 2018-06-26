@@ -16,7 +16,9 @@
     limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.codahale</groupId>
@@ -59,21 +61,50 @@
   </developers>
 
   <properties>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <bench.args>-h</bench.args>
+    <auto-value.version>1.6.1</auto-value.version>
+    <errorprone.version>2.3.1</errorprone.version>
+    <google-java-format.version>1.6</google-java-format.version>
     <jmh.version>1.21</jmh.version>
     <junit.jupiter.version>5.2.0</junit.jupiter.version>
     <junit.platform.version>1.2.0</junit.platform.version>
-    <errorprone.version>2.3.1</errorprone.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
     <nullaway.version>0.4.7</nullaway.version>
-    <google-java-format.version>1.6</google-java-format.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.auto.value</groupId>
+        <artifactId>auto-value-annotations</artifactId>
+        <version>${auto-value.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>25.1-jre</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <dependencies>
     <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+      <version>3.0.2</version>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit.jupiter.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
       <version>${junit.jupiter.version}</version>
       <scope>test</scope>
     </dependency>
@@ -87,6 +118,12 @@
       <groupId>org.quicktheories</groupId>
       <artifactId>quicktheories</artifactId>
       <version>0.25</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>2.19.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -132,6 +169,28 @@
         </plugins>
       </build>
     </profile>
+    <profile>
+      <id>bench</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.6.0</version>
+            <configuration>
+              <classpathScope>test</classpathScope>
+              <executable>java</executable>
+              <arguments>
+                <argument>-classpath</argument>
+                <classpath/>
+                <argument>org.openjdk.jmh.Main</argument>
+                <argument>${bench.args}</argument>
+              </arguments>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
   </profiles>
 
   <build>
@@ -169,6 +228,7 @@
         </plugin>
       </plugins>
     </pluginManagement>
+
     <plugins>
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
@@ -253,6 +313,12 @@
               <artifactId>nullaway</artifactId>
               <version>${nullaway.version}</version>
             </path>
+            <!-- enable @auto-value usage -->
+            <path>
+              <groupId>com.google.auto.value</groupId>
+              <artifactId>auto-value</artifactId>
+              <version>${auto-value.version}</version>
+            </path>
             <!-- build benchmarks -->
             <path>
               <groupId>org.openjdk.jmh</groupId>
@@ -290,9 +356,15 @@
               <goal>analyze-only</goal>
             </goals>
             <configuration>
-              <failOnWarning>true</failOnWarning>
+              <failOnWarning>false</failOnWarning>
               <ignoredDependencies>
+                <ignoredDependency>com.google.auto.value:auto-value</ignoredDependency>
+                <ignoredDependency>com.google.code.findbugs:jsr305</ignoredDependency>
+                <ignoredDependency>org.junit.jupiter:junit-jupiter-params</ignoredDependency>
+                <ignoredDependency>org.mockito:mockito-core</ignoredDependency>
+                <ignoredDependency>org.openjdk.jmh:jmh-core</ignoredDependency>
                 <ignoredDependency>org.openjdk.jmh:jmh-generator-annprocess</ignoredDependency>
+                <ignoredDependency>org.quicktheories:quicktheories</ignoredDependency>
               </ignoredDependencies>
             </configuration>
           </execution>
@@ -306,8 +378,9 @@
           <execution>
             <id>enforce</id>
             <configuration>
+              <fail>false</fail>
               <rules>
-                <requireUpperBoundDeps />
+                <requireUpperBoundDeps/>
               </rules>
             </configuration>
             <goals>
@@ -329,7 +402,7 @@
           <mapping>
             <java>SLASHSTAR_STYLE</java>
           </mapping>
-          <useDefaultExcludes />
+          <useDefaultExcludes/>
           <excludes>
             <exclude>src/main/resources/**</exclude>
           </excludes>
