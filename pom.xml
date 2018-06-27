@@ -70,7 +70,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <!-- Versions of various dependencies. -->
-    <auto-value.version>1.6.1</auto-value.version>
+    <auto-value.version>1.6.2</auto-value.version>
     <errorprone.version>2.3.1</errorprone.version>
     <google-java-format.version>1.6</google-java-format.version>
     <jmh.version>1.21</jmh.version>
