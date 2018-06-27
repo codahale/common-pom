@@ -364,6 +364,7 @@
           </annotationProcessorPaths>
           <compilerArgs>
             <arg>-Xlint:all</arg>
+            <arg>-Xlint:-processing</arg>
             <arg>-Xep:NullAway:ERROR</arg>
             <arg>-XepOpt:NullAway:AnnotatedPackages=com.codahale</arg>
             <arg>-XepExcludedPaths:.*/target/generated.*</arg>
