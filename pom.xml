@@ -77,6 +77,7 @@
     <junit.jupiter.version>5.2.0</junit.jupiter.version>
     <junit.platform.version>1.2.0</junit.platform.version>
     <nullaway.version>0.4.7</nullaway.version>
+    <mockito.version>2.19.0</mockito.version>
 
     <!-- When running `-Pbench exec:exec`, default to show the help. -->
     <bench.args>-h</bench.args>
@@ -119,7 +120,13 @@
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
-      <version>2.19.0</version>
+      <version>${mockito.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-junit-jupiter</artifactId>
+      <version>${mockito.version}</version>
       <scope>test</scope>
     </dependency>
     <!-- Benchmarking infrastructure. -->
