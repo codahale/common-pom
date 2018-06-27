@@ -76,8 +76,8 @@
     <jmh.version>1.21</jmh.version>
     <junit.jupiter.version>5.2.0</junit.jupiter.version>
     <junit.platform.version>1.2.0</junit.platform.version>
-    <nullaway.version>0.4.7</nullaway.version>
     <mockito.version>2.19.0</mockito.version>
+    <nullaway.version>0.4.7</nullaway.version>
 
     <!-- When running `-Pbench exec:exec`, default to show the help. -->
     <bench.args>-h</bench.args>
@@ -363,6 +363,7 @@
             </path>
           </annotationProcessorPaths>
           <compilerArgs>
+            <arg>-Xlint:all</arg>
             <arg>-Xep:NullAway:ERROR</arg>
             <arg>-XepOpt:NullAway:AnnotatedPackages=com.codahale</arg>
             <arg>-XepExcludedPaths:.*/target/generated.*</arg>
