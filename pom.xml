@@ -16,7 +16,9 @@
     limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.codahale</groupId>
@@ -204,7 +206,7 @@
               <executable>java</executable>
               <arguments>
                 <argument>-classpath</argument>
-                <classpath />
+                <classpath/>
                 <argument>org.openjdk.jmh.Main</argument>
                 <argument>${bench.args}</argument>
               </arguments>
@@ -388,7 +390,7 @@
                     Requires that the version for each dependency resolved during a build, is equal
                     to or higher than all transitive dependency declarations.
                  -->
-                <requireUpperBoundDeps />
+                <requireUpperBoundDeps/>
                 <!-- Require a license file in every project. -->
                 <requireFilesExist>
                   <files>
@@ -398,7 +400,8 @@
                 <!-- Require that the license file be the official Apache License. -->
                 <requireFileChecksum>
                   <file>LICENSE</file>
-                  <checksum>cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30</checksum>
+                  <checksum>cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30
+                  </checksum>
                   <type>sha256</type>
                 </requireFileChecksum>
               </rules>
@@ -423,7 +426,7 @@
           <mapping>
             <java>SLASHSTAR_STYLE</java>
           </mapping>
-          <useDefaultExcludes />
+          <useDefaultExcludes/>
           <excludes>
             <!-- Ignore license files. -->
             <exclude>LICENSE</exclude>
