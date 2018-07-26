@@ -75,6 +75,7 @@
     <jmh.version>1.21</jmh.version>
     <junit.jupiter.version>5.2.0</junit.jupiter.version>
     <junit.platform.version>1.2.0</junit.platform.version>
+    <spotbugs.version>3.1.6</spotbugs.version>
 
     <!-- When running `-Pbench exec:exec`, default to show the help. -->
     <bench.args>-h</bench.args>
@@ -465,6 +466,30 @@
             <version>${google-java-format.version}</version>
           </dependency>
         </dependencies>
+      </plugin>
+      <!-- Enable static analysis with Spotbugs. -->
+      <plugin>
+        <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-maven-plugin</artifactId>
+        <version>${spotbugs.version}</version>
+        <configuration>
+          <excludeFilterFile>spotbugs.xml</excludeFilterFile>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>com.github.spotbugs</groupId>
+            <artifactId>spotbugs</artifactId>
+            <version>${spotbugs.version}</version>
+          </dependency>
+        </dependencies>
+        <executions>
+          <execution>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <phase>verify</phase>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
