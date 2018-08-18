@@ -301,6 +301,12 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>3.0.1</version>
+        <configuration>
+          <additionalOptions>
+            <option>--add-modules=java.xml.ws.annotation</option>
+            <option>-html5</option>
+          </additionalOptions>
+        </configuration>
         <executions>
           <execution>
             <id>attach-javadocs</id>
