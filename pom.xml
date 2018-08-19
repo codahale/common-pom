@@ -84,6 +84,12 @@
 
   <!-- Dependencies which I almost always use. -->
   <dependencies>
+    <dependency>
+      <groupId>org.jetbrains</groupId>
+      <artifactId>annotations</artifactId>
+      <version>16.0.2</version>
+      <optional>true</optional>
+    </dependency>
     <!-- Testing infrastructure and assertion libraries. -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
