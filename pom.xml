@@ -76,8 +76,7 @@
     <auto-value.version>1.6.2</auto-value.version>
     <google-java-format.version>1.6</google-java-format.version>
     <jmh.version>1.21</jmh.version>
-    <junit.jupiter.version>5.2.0</junit.jupiter.version>
-    <junit.platform.version>1.2.0</junit.platform.version>
+    <junit.jupiter.version>5.3.0</junit.jupiter.version>
     <spotbugs.version>3.1.6</spotbugs.version>
 
     <!-- When running `-Pbench exec:exec`, default to show the help. -->
@@ -96,6 +95,12 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit.jupiter.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
       <version>${junit.jupiter.version}</version>
       <scope>test</scope>
     </dependency>
@@ -265,18 +270,6 @@
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.22.0</version>
-        <dependencies>
-          <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-surefire-provider</artifactId>
-            <version>${junit.platform.version}</version>
-          </dependency>
-          <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit.jupiter.version}</version>
-          </dependency>
-        </dependencies>
       </plugin>
       <!-- Configure releases with the Sonatype OSS repo. -->
       <plugin>
