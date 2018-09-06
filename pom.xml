@@ -370,6 +370,7 @@
               <ignoredDependencies>
                 <ignoredDependency>com.google.auto.value:auto-value</ignoredDependency>
                 <ignoredDependency>com.google.code.findbugs:jsr305</ignoredDependency>
+                <ignoredDependency>org.junit.jupiter:junit-jupiter-engine</ignoredDependency>
                 <ignoredDependency>org.junit.jupiter:junit-jupiter-params</ignoredDependency>
                 <ignoredDependency>org.mockito:mockito-core</ignoredDependency>
                 <ignoredDependency>org.openjdk.jmh:jmh-core</ignoredDependency>
