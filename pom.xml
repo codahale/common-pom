@@ -491,7 +491,7 @@
           <dependency>
             <groupId>com.github.spotbugs</groupId>
             <artifactId>spotbugs</artifactId>
-            <version>${spotbugs.version}</version>
+            <version>3.1.7</version>
           </dependency>
         </dependencies>
         <executions>
