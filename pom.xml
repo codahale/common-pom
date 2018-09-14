@@ -304,8 +304,6 @@
         <version>3.0.1</version>
         <configuration>
           <additionalOptions>
-            <!-- Add annotation module to prevent Javadoc from puking on AutoValue classes. -->
-            <option>--add-modules=java.xml.ws.annotation</option>
             <!-- Generate HTML5 docs. -->
             <option>-html5</option>
           </additionalOptions>
