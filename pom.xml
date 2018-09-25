@@ -71,7 +71,6 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <!-- Versions of various dependencies. -->
-    <auto-value.version>1.6.2</auto-value.version>
     <google-java-format.version>1.6</google-java-format.version>
     <jmh.version>1.21</jmh.version>
     <junit.jupiter.version>5.3.1</junit.jupiter.version>
@@ -138,16 +137,6 @@
   <!-- Dependencies which I often use but not always. -->
   <dependencyManagement>
     <dependencies>
-      <dependency>
-        <groupId>com.google.auto.value</groupId>
-        <artifactId>auto-value</artifactId>
-        <version>${auto-value.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.auto.value</groupId>
-        <artifactId>auto-value-annotations</artifactId>
-        <version>${auto-value.version}</version>
-      </dependency>
       <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
