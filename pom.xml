@@ -16,7 +16,9 @@
     limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.codahale</groupId>
@@ -376,10 +378,11 @@
               <fail>false</fail>
               <rules>
                 <!--
-                    Requires that the version for each dependency resolved during a build, is equal
-                    to or higher than all transitive dependency declarations.
-                 -->
-                <requireUpperBoundDeps />
+                If a project has two dependencies, A and B, both depending on the same artifact, C,
+                this rule will fail the build if A depends on a different version of C then the
+                version of C depended on by B.
+                -->
+                <dependencyConvergence/>
                 <!-- Require a license file in every project. -->
                 <requireFilesExist>
                   <files>
@@ -415,7 +418,7 @@
           <mapping>
             <java>SLASHSTAR_STYLE</java>
           </mapping>
-          <useDefaultExcludes />
+          <useDefaultExcludes/>
           <excludes>
             <!-- Ignore license files. -->
             <exclude>LICENSE</exclude>
