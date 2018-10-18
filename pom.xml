@@ -74,7 +74,6 @@
     <google-java-format.version>1.6</google-java-format.version>
     <jmh.version>1.21</jmh.version>
     <junit.jupiter.version>5.3.1</junit.jupiter.version>
-    <spotbugs.version>3.1.6</spotbugs.version>
     <asm.version>6.2.1</asm.version>
 
     <!-- When running `-Pbench exec:exec`, default to show the help. -->
@@ -247,7 +246,7 @@
       <!-- Enable JUnit 5 tests. -->
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.22.0</version>
+        <version>2.22.1</version>
         <dependencies>
           <!-- use new version of OW2 ASM which supports Java 11 -->
           <dependency>
@@ -473,7 +472,7 @@
       <plugin>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-maven-plugin</artifactId>
-        <version>${spotbugs.version}</version>
+        <version>3.1.6</version>
         <configuration>
           <effort>max</effort>
           <excludeFilterFile>spotbugs.xml</excludeFilterFile>
@@ -484,7 +483,7 @@
           <dependency>
             <groupId>com.github.spotbugs</groupId>
             <artifactId>spotbugs</artifactId>
-            <version>3.1.7</version>
+            <version>3.1.8</version>
           </dependency>
         </dependencies>
         <executions>
