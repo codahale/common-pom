@@ -246,7 +246,7 @@
       <!-- Enable JUnit 5 tests. -->
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.22.1</version>
+        <version>2.22.0</version>
         <dependencies>
           <!-- use new version of OW2 ASM which supports Java 11 -->
           <dependency>
