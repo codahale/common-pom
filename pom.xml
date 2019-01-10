@@ -71,7 +71,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <!-- Versions of various dependencies. -->
-    <google-java-format.version>1.6</google-java-format.version>
+    <google-java-format.version>1.7</google-java-format.version>
     <jmh.version>1.21</jmh.version>
     <junit.jupiter.version>5.3.2</junit.jupiter.version>
     <asm.version>6.2.1</asm.version>
@@ -447,7 +447,7 @@
       <plugin>
         <groupId>com.coveo</groupId>
         <artifactId>fmt-maven-plugin</artifactId>
-        <version>2.6.0</version>
+        <version>2.7</version>
         <executions>
           <execution>
             <goals>
