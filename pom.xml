@@ -21,7 +21,7 @@
 
   <groupId>com.codahale</groupId>
   <artifactId>common-pom</artifactId>
-  <version>0.0.18-SNAPSHOT</version>
+  <version>0.0.18</version>
   <packaging>pom</packaging>
   <name>common-pom</name>
   <url>https://github.com/codahale/common-pom</url>
@@ -48,7 +48,7 @@
     <developerConnection>scm:git:https://github.com/codahale/common-pom.git
     </developerConnection>
     <url>https://github.com/codahale/common-pom</url>
-    <tag>HEAD</tag>
+    <tag>v0.0.18</tag>
   </scm>
 
   <developers>
