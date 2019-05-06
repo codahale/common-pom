@@ -415,6 +415,11 @@
             <exclude>LICENSE</exclude>
             <!-- Ignore text files. -->
             <exclude>**/*.txt</exclude>
+	    <!-- Ignore AsciiDoc files. -->
+	    <exclude>**/*.adoc</exclude>
+	    <!-- Ignore YAML files. -->
+	    <exclude>**/*.yaml</exclude>
+	    <exclude>**/*.yml</exclude>
             <!-- Ignore all resource files. -->
             <exclude>src/main/resources/**</exclude>
             <exclude>src/test/resources/**</exclude>
