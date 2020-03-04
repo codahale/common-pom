@@ -16,7 +16,9 @@
     limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.codahale</groupId>
@@ -72,8 +74,8 @@
 
     <!-- Versions of various dependencies. -->
     <google-java-format.version>1.7</google-java-format.version>
-    <jmh.version>1.21</jmh.version>
-    <asm.version>6.2.1</asm.version>
+    <jmh.version>1.23</jmh.version>
+    <asm.version>7.3.1</asm.version>
 
     <!-- When running `-Pbench exec:exec`, default to show the help. -->
     <bench.args>-h</bench.args>
@@ -85,13 +87,13 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
-      <version>5.5.1</version>
+      <version>5.6.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
-      <version>3.12.2</version>
+      <version>3.15.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -103,7 +105,7 @@
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
-      <version>3.0.0</version>
+      <version>3.3.0</version>
       <scope>test</scope>
     </dependency>
     <!-- Benchmarking infrastructure. -->
@@ -127,7 +129,7 @@
       <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
-        <version>28.0-jre</version>
+        <version>28.2-jre</version>
         <exclusions>
           <exclusion>
             <groupId>com.google.code.findbugs</groupId>
@@ -373,7 +375,7 @@
                 this rule will fail the build if A depends on a different version of C then the
                 version of C depended on by B.
                 -->
-                <dependencyConvergence />
+                <dependencyConvergence/>
                 <!-- Require a license file in every project. -->
                 <requireFilesExist>
                   <files>
@@ -409,17 +411,17 @@
           <mapping>
             <java>SLASHSTAR_STYLE</java>
           </mapping>
-          <useDefaultExcludes />
+          <useDefaultExcludes/>
           <excludes>
             <!-- Ignore license files. -->
             <exclude>LICENSE</exclude>
             <!-- Ignore text files. -->
             <exclude>**/*.txt</exclude>
-	    <!-- Ignore AsciiDoc files. -->
-	    <exclude>**/*.adoc</exclude>
-	    <!-- Ignore YAML files. -->
-	    <exclude>**/*.yaml</exclude>
-	    <exclude>**/*.yml</exclude>
+            <!-- Ignore AsciiDoc files. -->
+            <exclude>**/*.adoc</exclude>
+            <!-- Ignore YAML files. -->
+            <exclude>**/*.yaml</exclude>
+            <exclude>**/*.yml</exclude>
             <!-- Ignore all resource files. -->
             <exclude>src/main/resources/**</exclude>
             <exclude>src/test/resources/**</exclude>
@@ -462,7 +464,7 @@
       <plugin>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-maven-plugin</artifactId>
-        <version>3.1.11</version>
+        <version>3.1.12.2</version>
         <configuration>
           <effort>max</effort>
           <excludeFilterFile>spotbugs.xml</excludeFilterFile>
